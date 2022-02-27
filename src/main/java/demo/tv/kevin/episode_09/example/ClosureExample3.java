@@ -1,20 +1,24 @@
 package demo.tv.kevin.episode_09.example;
 
-public class ClosureExample {
+public class ClosureExample3 {
 
     public static void main(String[] args) {
         int number = 100;
 //        number = 1; - final or effectively final
         System.out.println("Anonymous Class");
-        testClosure("Anounymous Class" , new Runnable() {
+        testClosure("Anonymous Class" , new Runnable() {
             @Override
             public void run() {
+                int number = 40;
                 System.out.println(number);
             }
         });
 
         System.out.println("Lambda");
-        testClosure("Lambda Expression", ()-> System.out.println(number));
+        testClosure("Lambda Expression", ()-> {
+//            int number = 40; <- variable number is already defined in scope
+            System.out.println(number);
+        });
         System.out.println("===================");
     }
 
