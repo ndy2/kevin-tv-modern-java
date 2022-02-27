@@ -83,3 +83,19 @@ class Product{
     private String name;
     private BigDecimal price;
 }
+
+@Data
+@AllArgsConstructor
+class OrderedItem{
+    private Long id;
+    private Product product;
+    private int quantity;
+}
+
+@Data
+@AllArgsConstructor
+class Order{
+    private Long id;
+    private String orderId;
+    private List<OrderedItem> orderedItems;
+}
